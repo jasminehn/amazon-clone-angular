@@ -7,14 +7,15 @@ import { Product } from 'src/app/models/product.model';
 })
 export class ProductBoxComponent implements OnInit {
   @Input() fullWidthMode = false;
-  product: Product | undefined = {
+  @Input() product: Product | undefined;
+  /*product: Product | undefined = {
     id: 1,
     title: 'sneakers',
     price: 150,
     category: 'shoes',
     description: 'Describing the shoes here',
     image: 'https://via.placeholder.com/150'
-  };
+  };*/
   @Output() addToCart = new EventEmitter();
 
   constructor() { }
