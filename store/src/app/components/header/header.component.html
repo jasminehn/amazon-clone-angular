@@ -1,7 +1,62 @@
-<mat-toolbar class="max-w-7xl mx-auto border-x justify-between">
-    <a routerLink="home">Amazon</a>
+<mat-toolbar class="mx-auto justify-between bg-[#131921]">
+    <!--amazon logo-->
+    <a routerLink="home" class="text-white">amazon</a>
+    <!-- <a routerLink="home" class="text-white">
+        <img src="https://pngimg.com/d/amazon_PNG25.png" alt="" class="w-[100px]">
+    </a> -->
+
+    <!--name/address-->
+    <div class="flex text-white"> 
+        <span><mat-icon>location_on</mat-icon></span>
+        <div class="flex flex-col">
+            <span class="text-xs font-light text-slate-200">Deliver to Bob</span>
+            <span class="text-base">Cityville 12345</span>
+        </div>
+    </div>
+    
+    <!--search bar-->
+    <div class="search-bar-container">
+        <div class="search-bar-wrapper bg-white rounded-md justify-between flex flex-row cursor-text">
+            <div>
+                <!-- <span class="text-slate-600 text-sm font-normal bg-[#f3f3f3] p-[5px] mr-[10px]">All<mat-icon class="inline-block align-middle">arrow_drop_down</mat-icon></span> -->
+                <button class="text-slate-600 text-sm font-normal bg-[#f3f3f3] p-[9px] mr-[10px] rounded-l-md h-full">All<mat-icon class="inline-block align-middle">arrow_drop_down</mat-icon></button>
+                <span class="text-slate-600 text-base font-normal">Search Amazon</span>
+            </div>
+            <div>
+                <button class="bg-[#febd69] px-[10px] rounded-r-md h-full"><mat-icon class="inline-block align-middle">search</mat-icon></button>
+            </div>
+        </div>
+    </div>
+    <!-- <form class="search-bar-form">
+        <mat-form-field class="search-bar-full-width bg-white">
+            <input matInput placeholder="Search Amazon" class="text-sm">
+        </mat-form-field>
+    </form> -->
+
+    <!--choose language-->
+    <div class="text-white">
+        <span class="flex flex-row">
+            <img src="https://em-content.zobj.net/thumbs/120/twitter/322/flag-united-states_1f1fa-1f1f8.png" alt="" class="h-[22px] mr-[4px]">
+            <span class="text-base">EN</span>
+            <mat-icon class="text-slate-400 inline-block align-middle">arrow_drop_down</mat-icon>
+        </span>
+    </div>
+
+    <!--account-->
+    <div class="text-white flex flex-col"> 
+        <span class="text-xs font-light">Hello, Bob</span>
+        <span class="text-sm">Account & Lists <mat-icon class="text-slate-400 inline-block align-middle">arrow_drop_down</mat-icon></span>
+    </div>
+
+    <!--returns/orders-->
+    <div class="text-white flex flex-col"> 
+        <span class="text-xs font-light">Return</span>
+        <span class="text-sm">& Orders</span>
+    </div>
+
+    <!--cart button-->
     <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgeColor="accent">shopping_cart</mat-icon>
+        <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgeColor="accent" class="text-white">shopping_cart</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
         <div class="p-3 divide-y divide-solid">
@@ -41,4 +96,23 @@
             </div>
         </div>
     </mat-menu>
+</mat-toolbar>
+<mat-toolbar class="mx-auto justify-around bg-[#232f3e] h-[40px] text-white text-sm font-normal">
+    <!-- <a href=""><mat-icon>menu</mat-icon>All</a> -->
+    <a href="" class="font-bold">All</a>
+    <a href="">Clinic</a>
+    <a href="">Same-Day Delivery</a>
+    <a href="">Prime Video</a>
+    <a href="">Amazon Basics</a>
+    <a href="">Best Sellers</a>
+    <a href="">Gift Cards</a>
+    <a href="">Buy Again</a>
+    <a href="">Household, Health & Baby Care</a>
+    <a href="">Livestreams</a>
+    <a href="">Beauty & Personal Care</a>
+    <a href="">Coupons</a>
+    <a href="">Whole Foods</a>
+    <a href="">Pet Supplies</a>
+    <a href="">Home Improvement</a>
+    <a href="">Smart Home</a>
 </mat-toolbar>
