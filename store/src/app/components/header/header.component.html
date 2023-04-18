@@ -1,13 +1,16 @@
-<mat-toolbar class="mx-auto justify-between bg-[#131921]">
+<mat-toolbar class="mx-auto justify-between bg-[#131921] gap-[10px]">
     <!--amazon logo-->
-    <a routerLink="home" class="text-white">amazon</a>
+    <!-- <a routerLink="home" class="text-white">amazon</a> -->
     <!-- <a routerLink="home" class="text-white">
         <img src="https://pngimg.com/d/amazon_PNG25.png" alt="" class="w-[100px]">
     </a> -->
+    <a routerLink="home" class="w-[155px] text-white rounded-sm border-transparent border hover:border-white">
+        <img src="assets/images/amazon-logo.png" alt="oh no" class="">
+    </a>
 
     <!--name/address-->
-    <div class="flex text-white"> 
-        <span><mat-icon>location_on</mat-icon></span>
+    <div class="flex text-white p-[5px] rounded-sm border-transparent border hover:border-white cursor-pointer"> 
+        <div class="pt-[12px]"><mat-icon class="">location_on</mat-icon></div>
         <div class="flex flex-col">
             <span class="text-xs font-light text-slate-200">Deliver to Bob</span>
             <span class="text-base">Cityville 12345</span>
@@ -15,15 +18,17 @@
     </div>
     
     <!--search bar-->
-    <div class="search-bar-container">
-        <div class="search-bar-wrapper bg-white rounded-md justify-between flex flex-row cursor-text">
+    <!-- <div class="min-w-[800px] max-w-[1100px] w-full"> -->
+    <!-- <div class="w-[100px] md:w-[150px] lg:w-[300px] xl:w-[600px] 2xl:w-[1000px] w-full"> -->
+    <div class="w-[1200px] w-full flex mx-[10px] shrink">
+        <div class="w-full h-[43px] bg-white rounded-md justify-between flex flex-row cursor-text">
             <div>
                 <!-- <span class="text-slate-600 text-sm font-normal bg-[#f3f3f3] p-[5px] mr-[10px]">All<mat-icon class="inline-block align-middle">arrow_drop_down</mat-icon></span> -->
-                <button class="text-slate-600 text-sm font-normal bg-[#f3f3f3] p-[9px] mr-[10px] rounded-l-md h-full">All<mat-icon class="inline-block align-middle">arrow_drop_down</mat-icon></button>
+                <button class="text-slate-600 text-sm font-normal bg-[#f3f3f3] p-[9px] mr-[10px] rounded-l-md h-full hover:bg-[#dadada]">All<mat-icon class="inline-block align-middle">arrow_drop_down</mat-icon></button>
                 <span class="text-slate-600 text-base font-normal">Search Amazon</span>
             </div>
             <div>
-                <button class="bg-[#febd69] px-[10px] rounded-r-md h-full"><mat-icon class="inline-block align-middle">search</mat-icon></button>
+                <button class="bg-[#febd69] px-[10px] rounded-r-md h-full hover:bg-[#f3a847]"><mat-icon class="inline-block align-middle">search</mat-icon></button>
             </div>
         </div>
     </div>
@@ -34,7 +39,7 @@
     </form> -->
 
     <!--choose language-->
-    <div class="text-white">
+    <div class="text-white px-[5px] py-[12px] rounded-sm border-transparent border hover:border-white cursor-pointer">
         <span class="flex flex-row">
             <img src="https://em-content.zobj.net/thumbs/120/twitter/322/flag-united-states_1f1fa-1f1f8.png" alt="" class="h-[22px] mr-[4px]">
             <span class="text-base">EN</span>
@@ -43,21 +48,24 @@
     </div>
 
     <!--account-->
-    <div class="text-white flex flex-col"> 
+    <div class="text-white flex flex-col p-[5px] rounded-sm border-transparent border hover:border-white cursor-pointer"> 
         <span class="text-xs font-light">Hello, Bob</span>
         <span class="text-sm">Account & Lists <mat-icon class="text-slate-400 inline-block align-middle">arrow_drop_down</mat-icon></span>
     </div>
 
     <!--returns/orders-->
-    <div class="text-white flex flex-col"> 
+    <div class="text-white flex flex-col p-[5px] rounded-sm border-transparent border hover:border-white cursor-pointer"> 
         <span class="text-xs font-light">Return</span>
         <span class="text-sm">& Orders</span>
     </div>
 
     <!--cart button-->
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgeColor="accent" class="text-white">shopping_cart</mat-icon>
-    </button>
+    <div class="p-[5px] rounded-sm border-transparent border hover:border-white">
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="text-white">
+            <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgeColor="accent" >shopping_cart</mat-icon>
+            <!-- Cart -->
+        </button>
+    </div>
     <mat-menu #menu="matMenu">
         <div class="p-3 divide-y divide-solid">
             <div class="pd-3 flex justify-between">
@@ -97,22 +105,24 @@
         </div>
     </mat-menu>
 </mat-toolbar>
-<mat-toolbar class="mx-auto justify-around bg-[#232f3e] h-[40px] text-white text-sm font-normal">
-    <!-- <a href=""><mat-icon>menu</mat-icon>All</a> -->
-    <a href="" class="font-bold">All</a>
-    <a href="">Clinic</a>
-    <a href="">Same-Day Delivery</a>
-    <a href="">Prime Video</a>
-    <a href="">Amazon Basics</a>
-    <a href="">Best Sellers</a>
-    <a href="">Gift Cards</a>
-    <a href="">Buy Again</a>
-    <a href="">Household, Health & Baby Care</a>
-    <a href="">Livestreams</a>
-    <a href="">Beauty & Personal Care</a>
-    <a href="">Coupons</a>
-    <a href="">Whole Foods</a>
-    <a href="">Pet Supplies</a>
-    <a href="">Home Improvement</a>
-    <a href="">Smart Home</a>
+<mat-toolbar class="mx-auto justify-around bg-[#232f3e] h-[40px] text-white text-xs 2xl:text-sm font-normal"> <!--[&>*]:text-red-500,italic-->
+    <div class="p-[6px] rounded-sm border-transparent border hover:border-white cursor-pointer flex">
+        <mat-icon class="inline-block align-middle">menu</mat-icon><b class="pt-[3px]">All</b>
+    </div>
+    <!-- TODO make this not bad -->
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Clinic</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Same-Day Delivery</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Prime Video</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Amazon Basics</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Best Sellers</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Gift Cards</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Buy Again</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Household, Health & Baby Care</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Livestreams</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Beauty & Personal Care</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Coupons</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Whole Foods</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Pet Supplies</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Home Improvement</a>
+    <a href="" class="p-[8px] rounded-sm border-transparent border hover:border-white">Smart Home</a>
 </mat-toolbar>
