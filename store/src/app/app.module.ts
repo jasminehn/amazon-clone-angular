@@ -26,38 +26,31 @@ import { ProductBoxComponent } from './pages/home/components/product-box/product
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    ProductsHeaderComponent,
-    FiltersComponent,
-    ProductBoxComponent,
-    CartComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatGridListModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
-    MatExpansionModule,
-    MatListModule,
-    MatToolbarModule,
-    MatTableModule,
-    MatBadgeModule,
-    MatSnackBarModule,
-    MatInputModule,
-    HttpClientModule
-  ],
-  providers: [CartService, StoreService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomeComponent,
+        ProductsHeaderComponent,
+        FiltersComponent,
+        ProductBoxComponent,
+        CartComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatGridListModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatCardModule,
+        MatIconModule,
+        MatExpansionModule,
+        MatListModule,
+        MatToolbarModule,
+        MatTableModule,
+        MatBadgeModule,
+        MatSnackBarModule,
+        MatInputModule], providers: [CartService, StoreService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
