@@ -5,7 +5,7 @@
 still in progress!
 
 ## ⚙️ Tech stack
-- Angular
-- TypeScript
-- Tailwind
-- Fake Store API
+- [Angular](https://angular.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Fake Store API](https://fakestoreapi.com/)
