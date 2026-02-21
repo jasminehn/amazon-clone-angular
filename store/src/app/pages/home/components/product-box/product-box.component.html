@@ -1,32 +1,36 @@
-<mat-card *ngIf="product" [ngClass]="{'text-center': !fullWidthMode}">
+@if (product) {
+  <mat-card [ngClass]="{'text-center': !fullWidthMode}">
     <div [ngClass]="{flex: fullWidthMode}">
-        <img class="mb-1 mx-auto h-[200px]" [ngClass]="{'h-200px': !fullWidthMode, 'h-[360px]': fullWidthMode}" [src]="product.image" />
-        <div class="w-full" [ngClass]="{'px-8 flex flex-col justify-between': fullWidthMode}">
-            <div>
-                <h5>{{ product.category }}</h5>
-                <!-- <p class="truncate hover:whitespace-normal">{{ product.title }}</p> -->
-                <p class="text-left">{{ product.title }}</p>
-                <!--ratings-->
-                <div class="flex">
-                    <span class="text-[#e8932c] text-xs">
-                        <mat-icon class="scale-75">star</mat-icon>
-                        <mat-icon class="scale-75">star</mat-icon>
-                        <mat-icon class="scale-75">star</mat-icon>
-                        <mat-icon class="scale-75">star</mat-icon>
-                        <mat-icon class="scale-75">star_half</mat-icon>
-                    </span>
-                    <mat-icon class="scale-50">keyboard_arrow_down</mat-icon>
-                    <span class="text-blue-300 pt-[4px]">13,892</span>
-                </div>
-                <p *ngIf="fullWidthMode">{{ product.description }}</p>
-            </div>
-            <div class="flex justify-between">
-                <span class="text-black font-medium text-lg">{{ product.price | currency }}</span>
-                <button (click)="onAddToCart()" >
-                    <!-- <mat-icon class="text-gray-500">shopping_cart</mat-icon> -->
-                    <span class="bg-[#ffd814] rounded-lg px-[8px] py-[4px] hover:bg-[#f7ca00]">Add to Cart</span>
-                </button>
-            </div>
+      <img class="mb-1 mx-auto h-[200px]" [ngClass]="{'h-200px': !fullWidthMode, 'h-[360px]': fullWidthMode}" [src]="product.image" />
+      <div class="w-full" [ngClass]="{'px-8 flex flex-col justify-between': fullWidthMode}">
+        <div>
+          <h5>{{ product.category }}</h5>
+          <!-- <p class="truncate hover:whitespace-normal">{{ product.title }}</p> -->
+          <p class="text-left">{{ product.title }}</p>
+          <!--ratings-->
+          <div class="flex">
+            <span class="text-[#e8932c] text-xs">
+              <mat-icon class="scale-75">star</mat-icon>
+              <mat-icon class="scale-75">star</mat-icon>
+              <mat-icon class="scale-75">star</mat-icon>
+              <mat-icon class="scale-75">star</mat-icon>
+              <mat-icon class="scale-75">star_half</mat-icon>
+            </span>
+            <mat-icon class="scale-50">keyboard_arrow_down</mat-icon>
+            <span class="text-blue-300 pt-[4px]">13,892</span>
+          </div>
+          @if (fullWidthMode) {
+            <p>{{ product.description }}</p>
+          }
         </div>
+        <div class="flex justify-between">
+          <span class="text-black font-medium text-lg">{{ product.price | currency }}</span>
+          <button (click)="onAddToCart()" >
+            <!-- <mat-icon class="text-gray-500">shopping_cart</mat-icon> -->
+            <span class="bg-[#ffd814] rounded-lg px-[8px] py-[4px] hover:bg-[#f7ca00]">Add to Cart</span>
+          </button>
+        </div>
+      </div>
     </div>
-</mat-card>
+  </mat-card>
+}
