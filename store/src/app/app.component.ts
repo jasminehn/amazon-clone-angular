@@ -3,12 +3,13 @@ import { Cart } from './models/cart.model';
 import { CartService } from './services/cart.service';
 
 @Component({
-  selector: 'app-root',
-  template: `
+    selector: 'app-root',
+    template: `
     <app-header [cart]="cart"></app-header>
     <router-outlet></router-outlet>
   `,
-  styles: []
+    styles: [],
+    standalone: false
 })
 export class AppComponent implements OnInit {
   //title = 'store';

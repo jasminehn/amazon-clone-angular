@@ -3,8 +3,9 @@ import { Cart, CartItem } from 'src/app/models/cart.model';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html'
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    standalone: false
 })
 export class CartComponent implements OnInit {
   cart: Cart = { items: [

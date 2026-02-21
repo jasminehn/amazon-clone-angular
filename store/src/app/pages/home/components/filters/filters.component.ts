@@ -3,8 +3,9 @@ import { Subscription } from 'rxjs';
 import { StoreService } from 'src/app/services/store.service';
 
 @Component({
-  selector: 'app-filters',
-  templateUrl: 'filters.component.html'
+    selector: 'app-filters',
+    templateUrl: 'filters.component.html',
+    standalone: false
 })
 export class FiltersComponent implements OnInit, OnDestroy {
   @Output() showCategory = new EventEmitter<string>();

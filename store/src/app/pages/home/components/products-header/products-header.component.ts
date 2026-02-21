@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-products-header',
-  templateUrl: 'products-header.component.html'
+    selector: 'app-products-header',
+    templateUrl: 'products-header.component.html',
+    standalone: false
 })
 export class ProductsHeaderComponent implements OnInit {
   @Output() columnsCountChange = new EventEmitter<number>();
